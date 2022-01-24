@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+           box-sizing: border-box;
+       }
+       body{
+           margin:0px;
+           padding:0px;
+       }
+       .first{
+           position: absolute;
+       }
+       .navbar{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           background-color: black;
+           color:white;
+           padding: 5px;
+           position: fixed;
+           top:0;
+           width:100%;
+       }
+       .brand{
+           font-size: 20px;
+           padding-left: 10px;
+       }
+       .links>ul{
+           display: flex;
+           margin-right: 50px;
+           
+       }
+       .links>ul>li{
+           list-style-type: none;
+           margin-right: 20px;
+       }
+       .links>ul>li>a{
+           text-decoration: none;
+           font-size: 16px;
+           padding:5px;
+           margin-right: 30px;
+           display: block;
+           color: white;
+
+       }
+       .links>ul>li>a:hover{
+           background-color: gray;
+           padding: 5px;
+           transition: 0.5s;
+       }
+       .toggle{
+           display: none;
+           position: absolute;
+           top:13px;
+           right:25px;
+           flex-direction: column;
+           justify-content: space-between;
+           width:30px;
+            height:21px;
+            display: none;
+       }
+       .toggle>.bars{
+           height:3px;
+           width:30px;
+           background-color: white;
+           border-radius: 1px;
+           display: block;
+       }
+       /* .now{
+           background-color: red;
+       } */
+
+       @media (max-width:730px){
+           .toggle{
+               display: flex;
+           }
+           .links{
+               display: none;
+               width:100%;
+               
+           }
+           .navbar{
+               flex-direction: column;
+               align-items: flex-start;
+               padding: 12px;
+               
+           }
+           .links>ul{
+               flex-direction: column;
+               margin-left: -10px;
+               width: 100%;;
+               
+           }
+           .links>ul>li{
+               padding: 10px;
+              
+           }
+           .links>ul>li>a{
+              cursor: pointer;
+              width:100%;
+                  
+           }
+           /* .links>ul>li>a:hover{
+               background-color: red;
+           } */
+           .links.active{
+               display: flex;
+           }
+       }
+
+    </style>
+</head>
+<body>
+
+<div style="width: 100%;"  class="">
+    <div class="first">
+        <div class="navbar">
+            <div class="brand">Brand</div>
+            <a href="#" class="toggle">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </a>
+            <div class="links">
+                <ul>
+                    <li><a class="now" href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+
+<script>
+    var x=document.getElementsByClassName("toggle")[0];
+    var y=document.getElementsByClassName("links")[0];
+    console.log(x);
+    x.addEventListener('click',()=>{
+        y.classList.toggle("active");
+        
+    })
+</script>
+</body>
+</html>
